@@ -13,7 +13,10 @@
             /** Variables **/
             $nombre = "Omar Roselli";
             echo "<h2>".$nombre."</h2>";
-
+            /** Constantes **/
+            define("OMAR","Omar Roselli");
+            echo OMAR;       
+    
             /** Arreglos  **/
             $arregloNombres = ["Fernando", "Franco", "Carlos", "Martin"];
             echo"<ul>";
@@ -23,8 +26,8 @@
             echo"</ul>";
             /** clave valor **/
             $array2 = [
-                "omar"=>41,
-                "male"=>38
+                "Omar"=>41,
+                "Male"=>38
             ];
             echo "<ul>";
             foreach ($array2 as $key => $valor) {
@@ -32,9 +35,25 @@
             }
             echo "</ul>";
 
-            /** Constantes **/
-            define("OMAR","Omar Roselli");
-            echo OMAR;            
+            $arregloEdades = [11,12,35,85];
+            echo"<ul>";
+            for($i=0; $i<count($arregloEdades); $i++){
+                echo "<li>". $arregloEdades[$i]."</li>";
+            }
+            echo"</ul>";
+
+            function imprimirArreglo($arr){
+                echo"<ul>";
+                for($i=0; $i<count($arr); $i++){
+                    echo "<li>". $arr[$i]."</li>";
+                }
+                echo"</ul>";
+            }
+            echo "<h2> Arreglo impreso con la funcion </h2>";
+            imprimirArreglo($arregloEdades);
+            include 'funciones.php'; // Siempre utlizar require_once()
+
+            suma(5,7);
         ?>
 
 
