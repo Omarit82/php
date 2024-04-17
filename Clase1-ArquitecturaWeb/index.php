@@ -21,12 +21,20 @@
                 echo "<li>". $arregloNombres[$i]."</li>";
             }
             echo"</ul>";
+            /** clave valor **/
+            $array2 = [
+                "omar"=>41,
+                "male"=>38
+            ];
+            echo "<ul>";
+            foreach ($array2 as $key => $valor) {
+                echo "<li>".$key." ".$valor."</li>";
+            }
+            echo "</ul>";
 
             /** Constantes **/
             define("OMAR","Omar Roselli");
-            echo OMAR;
-
-            
+            echo OMAR;            
         ?>
 
 
