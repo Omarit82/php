@@ -33,7 +33,7 @@
             foreach ($array2 as $key => $valor) {
                 echo "<li>".$key." ".$valor."</li>";
             }
-            echo "</ul>";
+            echo "</ul>" ;
 
             $arregloEdades = [11,12,35,85];
             echo"<ul>";
