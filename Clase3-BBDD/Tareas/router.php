@@ -1,6 +1,8 @@
 <?php
-    require_once 'index.php';
-    require_once 'tareas.php';
+    require_once './controller/TareasController.php'; //Invoco al controller de las tareas.
+
+    $controlador = new TareasController();
+
     //LEE LA ACCION en la URL
     if (!empty($_GET['action'])){
         $action = $_GET['action'];
@@ -14,13 +16,13 @@
     //SWITCH PARA DETERMINAR EL CAMINO A SEGUIR
     switch ($parametros[0]) {
         case 'home':
-            home();
+            $controlador->home();
             break;
         case 'add':
-            insertTarea();
+            $controlador->insertTarea();
             break;
         case 'erase':
-            eraseTarea($parametros[1]);
+            $controlador->eraseTarea($parametros[1]);
             break;
         default:
             echo ('404 page not found');
