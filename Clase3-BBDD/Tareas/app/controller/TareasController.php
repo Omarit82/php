@@ -1,8 +1,10 @@
 <?php
-require_once './view/TareasView.php';
-require_once './model/TareasModel.php';
+require_once 'app/view/TareasView.php';
+require_once 'app/model/TareasModel.php';
+
 class TareasController{
     //El controlador va a tener una instancia de la clase vista
+    
     private $vista; 
     private $modelo;
     private $titulo;
@@ -25,11 +27,11 @@ class TareasController{
         }
         $end = 0;
         $this->modelo->insertTarea($tit,$des,$end);
-        header("Location: https://".$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']));
+        header("Location:".BASE_URL);
     }
     
-    function eraseTarea($id){
-        $this->modelo->eraseTarea($id);
-        header("Location: https://".$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']));
+    function eraseTarea($params){
+        $this->modelo->eraseTarea($params[0]);
+        header("Location:".BASE_URL);
     }
 }

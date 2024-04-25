@@ -1,12 +1,9 @@
 <?php
-
 class TareasView { //Es recomendado que el nombre de la clase sea el mismo del archivo
     function __construct(){
         //En este caso el constructor no hace nada
     }
     function mostrar($titulo,$tareas){//Se pone solo mostrar porque es obvio que es mostrar tareas.
-    
-        define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -15,7 +12,7 @@ class TareasView { //Es recomendado que el nombre de la clase sea el mismo del a
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title><?php echo $titulo ?></title>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-                <base href="'.BASE_URL.'">
+                <base href="<?php BASE_URL ?>">
             </head>
             <body>
                 <h1 class="p-5"><?php echo $titulo ?></h1>
