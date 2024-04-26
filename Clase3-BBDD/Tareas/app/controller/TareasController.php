@@ -34,4 +34,9 @@ class TareasController{
         $this->modelo->eraseTarea($params[0]);
         header("Location:".BASE_URL);
     }
+
+    function completada($params){
+        $this->modelo->completada($params[0]);
+        header("Location:".BASE_URL);
+    }
 }

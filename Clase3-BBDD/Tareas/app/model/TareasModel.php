@@ -19,8 +19,13 @@ class TareasModel{
     }
 
     function eraseTarea($id){
-        $sentencia = $this->db->prepare( "DELETE FROM `task` WHERE `task`.`id` = ?");
+        $sentencia = $this->db->prepare("DELETE FROM `task` WHERE `task`.`id` = ?");
         $sentencia->execute(array($id));
       
+    }
+
+    function completada($id){
+        $sentencia = $this->db->prepare ("UPDATE `task` SET `ended`=? WHERE `id`=$id");
+        $sentencia->execute(array(1));
     }
 }
